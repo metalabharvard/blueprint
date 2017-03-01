@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="imgs/favicon2.png">
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>    
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.css' rel='stylesheet' />
+    <link href='css/slider.css' rel='stylesheet' />
+	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
+
+    
+    <title>Blueprint for Counter Education</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    
+    	#sliders {
+				z-index: 1000;
+				position: absolute;
+				padding: 10px 0 0 10px;
+				margin: 30px 0 0 30px;
+				background-color: transparent;
+				opacity: .9;
+				/*Disable Highlighting*/
+				  -webkit-touch-callout: none; /* iOS Safari */
+				  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+				  -khtml-user-select: none;    /* Konqueror */
+				  -moz-user-select: none;      /* Firefox */
+				  -ms-user-select: none;       /* IE/Edge */
+				  user-select: none;           /* non-prefixed version, currently
+				                                  not supported by any browser */
+			}
+			
+			.mapboxgl-popup-content{
+				background:black;
+				color:white;
+				padding: 2px 7px;
+				margin: 0;
+  				font-family: 'Inconsolata';
+  				font-size: 11px;
+  				border-radius: 2px;
+			}
+			.mapboxgl-popup-tip{
+				-webkit-filter: invert(100%);
+    			filter: invert(100%);
+    			margin: 0 0 12px 3px;
+
+			}
+    </style>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Blueprint for Counter Education</a>
+        </div>
+        <div id="navbar" class="menulinks collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="data.html"><span id="tdswitch">data</span></a></li>
+            <li><a href="reprint.html">Reprint+</a></li>
+            <li><a href="counterviews.html">Counterviews</a></li>
+            <li><a href="happenings.html">Happenings</a></li>
+            <li><a href="diy.html">DIY</a></li>
+            <li><a href="archive.html">Archive</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <div id="map"></div>
+    <div class="container">
+
+    </div><!-- /.container -->
+    
+		<div id="sliders">
+			<div class="slider-container">
+				<div class="sliderPerc">50%</div>
+				<div class="slider-background" id="posterSlider" data-layer="posters"></div>
+				<div class="sliderLabel">Posters</div>
+				<value></value>
+			</div>
+
+			<div class="slider-container">
+				<div class="sliderPerc">100%</div>
+				<div class="slider-background" id="mylarSlider" data-layer="mylars"></div>
+				<div class="sliderLabel">Mylars</div>
+				<value></value>
+			</div>
+			
+			<div class="slider-container">
+				<div class="sliderPerc">100%</div>
+				<div class="slider-background" id="chartSlider" data-layer="charts"></div>
+				<div class="sliderLabel">Charts</div>
+				<value></value>
+			</div>			
+			<!--
+			<label>Poster opacity: <span class='slider-value'>50%</span></label>
+      			<input data-layer="posters" class="slider" type='range' min='0' max='100' step='0' value='50' />
+			<label>Mylar opacity: <span class='slider-value'>100%</span></label>
+      			<input data-layer="mylars" class='slider' type='range' min='0' max='100' step='0' value='100' />	
+			<label>Blueprint opacity: <span class='slider-value'>100%</span></label>
+				<input data-layer="charts" class='slider' type='range' min='0' max='100' step='0' value='100' />
+				
+			-->
+				
+		</div>
+		<div id="tooltip" style="position:absolute;display:none"></div>
+		<div id="context"><div class="context_inner">
+			<div class="bar"><a href="#" id="close-window"><img src="imgs/closebutton.png"></a></div>
+			<p>This website supports the <a href="http://www.inventorypress.com/product/blueprint-for-counter-education" target="_blank">expanded 2016 reprint edition</a> of
+			Blueprint for Counter Education, one of the defining works of experimental pedagogy of the Vietnam War era. Originally published in 1970 and integrated into the Critical Studies curriculum at CalArts, the work was accompanied by posters designed to serve as a portable learning environment for a new process-based model of education. It also included a bibliography and checklist mapping patterns and relationships between radical thought and artistic practices from the avant-gardes to postmodernism. The website includes clips from interviews with the authors of Blueprint, documentation of the sketching process that led from index cards and charts to the final posters, and other archival and documentary materials.</p>
+		</div></div>
+
+
+<div class="object_slider_hldr">
+	<div class="object_slider_load">Loading</div>
+	<div class="object_slider_close"><span class="object_slider_title">Title</span><span> (close)</span></div>
+	<div class="object_slider"></div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  	<script src='js/app.js'></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+
+    var archive_arr = [];
+
+	$.ajax({
+	    xhr: function() {
+	        var xhr = new window.XMLHttpRequest();
+	        //Download progress
+	        xhr.addEventListener("progress", function(evt) {
+	            if (evt.lengthComputable) {
+	                var percentComplete = Math.round((evt.loaded / evt.total)*100);
+	                var statusmessage = 'Loading ('+percentComplete+'%)';
+	               // console.log(statusmessage)
+	            }
+	        }, false);
+	        return xhr;
+	    },
+	    dataType: "json",
+	    url: "archive.json",
+	    mimeType: "application/json",
+	    success: function(result){
+	        $.each(result, function(i, record) {
+	        	//console.log(record);
+	        	archive_arr.push({set:i,images:record});
+	        });
+	    }
+	}).done(function(data) {
+		console.log('done');
+		//console.log(archive_arr);
+	});
+
+/*
+      $('.object_slider').slick({
+		  slidesToShow: 3,
+		  slidesToScroll: 1,
+		  dots: true,
+		  centerMode: true,
+		  focusOnSelect: true
+        });
+*/
+    
+    
+    	//http://overlay-tiler.googlecode.com/svn/trunk/upload.html
+    	//http://gis.stackexchange.com/questions/27297/how-to-georeference-using-gdal-tools
+    	//https://github.com/mapbox/mbutil/
+    	var map;
+    	
+
+    	
+
+
+				$(".slider-background").slider({
+					min: 0,
+					max: 100,
+					value: 0,
+					range: "min",
+					animate: true,
+					slide: function(event, ui) {
+						setValue(event.target, ui.value);
+					}
+				});
+				
+				$("#chartSlider").slider("value", 100);
+				$("#mylarSlider").slider("value", 100);
+				$("#posterSlider").slider("value", 50);
+				
+				function setValue(e, myValue) {
+					var mySlider = document.getElementById('mySlider');
+					$(e).prev().html(myValue+"%");
+					$(e).next().next().value = myValue / 100;
+					map.setPaintProperty($(e).attr("data-layer"), 'raster-opacity', parseInt(myValue, 10) / 100);
+				}
+
+    		$("#context").draggable();
+    		$("#close-window").on("click",function() {
+    			$("#context").remove();
+    		});
+    	
+				mapboxgl.accessToken = 'pk.eyJ1IjoibWV0YWxhYmF0aGFydmFyZCIsImEiOiJfV2xNREdBIn0.Xq27cPjAOgs64MngKO7Hjg';
+		
+				map = new mapboxgl.Map({
+					container: 'map', 
+					style: 'mapbox://styles/metalabatharvard/cil2myt3l00139ckodvns3vry',
+					maxZoom: 5,
+					minZoom: 0,
+					center: [-26.95, -15], // starting position
+   				zoom: 1 ,
+					maxBounds: [
+						[-180,90],
+						[180,-90]
+					]
+				});
+				map.dragRotate.disable();   
+
+				//var featurelayer = L.mapbox.featureLayer().addTo(map);
+		
+
+
+				//var geojson = 
+	
+				
+				
+				
+				map.on('style.load', function () {
+					map.addSource("charts", {
+					"type": "raster",
+					"url": 'mapbox://metalabath.9yfj798f'
+					});
+
+					map.addSource("blocks", {
+					"type": "geojson",
+        	"data": {
+        		"type":"FeatureCollection","features":[
+							{"type":"Feature",
+							"properties":{
+							"title":"top"
+							},
+        			"geometry":{"coordinates":[[
+        			[-180,90],
+        			[-180,41],
+        			[296.015625,41],
+        			[294.609375,90],
+        			[-180,90]
+        			]],"type":"Polygon"},"id":"97ee7ded13b1d4e1ec8a227b8dc879e6"},
+        			
+							{"type":"Feature",
+							"properties":{
+							"title":"bottom"
+							},
+        			"geometry":{"coordinates":[[
+        			[-180,-90],
+        			[-180,-41],
+        			[296.015625,-41],
+        			[294.609375,-90],
+        			[-180,-90]
+        			]],"type":"Polygon"},"id":"97ee7ded13b1d4e1ec8a227b8dc879e6"}      			
+        			
+        			]     		
+        		}
+					});		
+					
+							
+					map.addLayer({'id':'charts','type':'raster','source':'charts','layout':{'visibility':'visible'},'paint':{'raster-opacity':1},'interactive':'true'},'mylars');					
+					map.addLayer({"type": "fill",
+        	"id": "blocks",
+        	"layout": {
+            "visibility": "visible"
+          },
+          "source": "blocks",
+          "interactive": true,
+          "paint": {
+          	"fill-opacity": 1,
+          	"fill-color": "white"
+          }});
+					
+					
+					map.setPaintProperty('posters', 'raster-opacity', 0.5);
+
+
+					/*map.on("mousemove",function(e) {	
+						//console.log(e);				
+						map.featuresAt(e.point, {
+							radius: 5,
+							layers: ['areas_features']
+						}, function(err, features) {
+							//console.log(features);
+							if(!err & features.length) {
+								$("#tooltip").html(features[0].properties.title);
+								features[0].properties["fill-opacity"] = 1;
+								$("#tooltip").offset({left:e.point.x+20, top:e.point.y+70});
+							//	$("#tooltip").show();
+
+							} else {
+								$("#tooltip").hide();
+							}
+						})	
+					});*/
+							
+				
+				});
+		
+		    var slider = $('#slider');
+				var sliderValue = $('#slider-value');		
+				$(".slider").on('input', function(e) {
+						map.setPaintProperty($(e.target).attr("data-layer"), 'raster-opacity', parseInt(e.target.value, 10) / 100);
+						$(e.target).prev().find(".slider-value").html(e.target.value + '%');
+				});
+			
+
+			/*var popup = new mapboxgl.Popup({
+				      			closeButton: false//, // keeps popups open
+      							//offset: mapboxgl.Point(20, -25) // offset so popup shows up above marker
+  							});
+			*/
+
+ 			var popup = new mapboxgl.Popup();
+			popup.options = {closeButton: false, anchor:"bottom", className:'thispopup'};
+
+
+
+			map.on('mousemove', function (e) {
+				map.featuresAt(e.point, {
+						radius: 7.5, // Half the marker size (15px).
+						includeGeometry: true,
+						layer: 'markers'
+				}, function (err, features) {
+        			
+
+
+        				map.getCanvas().style.cursor = (!err && features.length) ? 'pointer' : '';
+						if (err || !features.length) {
+								popup.remove();
+								return;
+						}
+
+						var feature = features[0];
+
+						//console.log(feature.layer);
+
+						var numImages = 'null';
+
+						for(var i  in archive_arr){
+							var setnum = parseInt(archive_arr[i].set.split("_")[1]);
+							var setsel = parseInt(feature.properties.title);
+							if(setnum == setsel){
+								numImages = archive_arr[i].images.length;
+							}
+						}
+
+						var desc = "Open "+numImages+" files";
+						/*
+						if(feature.properties.title == '01'){
+							desc = "This is marker 01";
+						}
+						else if(feature.properties.title == '02'){
+							desc = "This is marker 02";
+						}
+						else if(feature.properties.title == '03'){
+							desc = "This is marker 03";
+						}
+						else if(feature.properties.title == '04'){
+							desc = "This is marker 04";
+						}
+						else if(feature.properties.title == '05'){
+							desc = "This is marker 05";
+						}
+						else if(feature.properties.title == '06'){
+							desc = "This is marker 06";
+						}
+						else if(feature.properties.title == '07'){
+							desc = "This is marker 07";
+						}
+						else if(feature.properties.title == '08'){
+							desc = "This is marker 08";
+						}
+						else if(feature.properties.title == '09'){
+							desc = "This is marker 09";
+						}
+						else if(feature.properties.title == '10'){
+							desc = "This is marker 10";
+						}
+						else if(feature.properties.title == '11'){
+							desc = "This is marker 11";
+						}
+						else if(feature.properties.title == '12'){
+							desc = "This is marker 12";
+						}*/
+						// Populate the popup and set its coordinates
+						// based on the feature found.
+						//popup.Popup({closeButton:false});
+
+						popup.setLngLat([feature.geometry.coordinates[0],(feature.geometry.coordinates[1])])
+							 .setHTML(desc)
+						     .addTo(map);
+
+						console.log(feature.geometry.coordinates[1]);
+
+					});
+			});
+
+
+			map.on('click', function (e) {
+				map.featuresAt(e.point, {
+						radius: 7.5, // Half the marker size (15px).
+						includeGeometry: true,
+						layer: 'markers'
+				}, function (err, features) {
+        				
+						if (err || !features.length) {
+								popup.remove();
+								return;
+						}
+						var feature = features[0];
+						
+						var desc = "null";
+				        var loaded = 0;
+						var numImages;// = $(".object_slider").find("img").length;
+
+						//pull up popup, preload images from json, show loading animation
+						for(var i  in archive_arr){
+							var setnum = parseInt(archive_arr[i].set.split("_")[1]);
+							var setsel = parseInt(feature.properties.title);
+							if(setnum == setsel){
+								console.log(setnum +'=' +setsel);
+								for(var k in archive_arr[i].images){
+									console.log(archive_arr[i].images[k]);
+									var imageid = archive_arr[i].images[k].split('/')[4].split('_')[0];
+									var imageflickrurl = 'https://www.flickr.com/photos/139543551@N02/'+imageid;
+
+									console.log(archive_arr[i].images[k]+' - '+imageid)
+									$('.object_slider').append('<div><img class="'+imageid+' set_img" src="'+archive_arr[i].images[k]+'"><div class="object_slider_link"><a href="'+imageflickrurl+'" target="_blank">High res^</a></div></div>');
+								}
+								numImages = archive_arr[i].images.length
+							}
+						}
+						desc = "Showing "+numImages+" files";						
+						
+						$( ".set_img" ).hover(
+						  function() {
+						    var get_id = $( this ).attr( "class" ).split(' ')[0];
+						    var get_flickrurl = 'https://www.flickr.com/photos/139543551@N02/'+get_id;
+						    console.log(get_flickrurl);
+						    //$(this).find('span').show();
+						  }, function() {
+						    //$( this ).removeClass( "hover" );
+						  });
+						
+
+
+
+						$('.object_slider_title').html(desc);
+						$('.object_slider_load').show();
+
+				        $(".object_slider").find("img").load( function(e) {
+							++loaded;
+							//console.log("NUM OF IMAGES: "+numImages);
+							//console.log(loaded-10);
+							$('.object_slider_load').html('Loading '+(loaded-10)+'/'+numImages);
+							/// WHEN ALL IMAGES ARE LOADED, RUN
+							if (loaded === numImages) {
+								showcarousel();
+							};
+						});
+
+
+						//load carousel
+					function showcarousel(){
+					  $('.object_slider_load').hide();
+					  $('.object_slider_hldr').show();
+				      $('.object_slider').slick({
+						  centerMode: false,
+						  centerPadding: '60px',
+						  slidesToShow: 4,
+  						  focusOnSelect: true,
+  						  infinite: false,
+  						  speed: 300,
+						  dots: true,
+						  dotsClass: 'custom_paging',
+						  customPaging: function (slider, i) {
+						        return '<span class="num_'+i+'">'+(i + 1)+'</span>';
+						    }
+				        });
+
+				      	$('.slick-prev').html('< previous');
+				      	$('.slick-next').html('next >');
+				      }
+						//show images
+						console.log('clicked on '+feature.properties.title);
+
+
+
+					});
+			});
+			
+			$( ".object_slider_close span,.object_slider_title,.navbar" ).click(function() {
+					$('.object_slider').slick('unslick');
+					$('.object_slider').html('');
+					$('.object_slider_hldr').hide();
+
+			});
+
+
+			$(".slider-container").on("click",function(e) {
+				var $target = $(this).find(".slider-background");
+				var newVal = Math.round(((e.offsetX - 35) / $target.width())*100);
+				newVal = Math.min(Math.max(parseInt(newVal), 0), 100);
+				$target.slider("value",newVal);
+				setValue($target, newVal);
+				
+			});
+				/*featurelayer.setGeoJSON(geojson);
+			
+				map.on('move', function() {
+					var inBounds = [],
+							bounds = map.getBounds();
+					featurelayer.eachLayer(function(polygon) {
+						if (bounds.contains(polygon.getLatLngs())) {
+							inBounds.push(polygon);
+							console.log("YES");
+						} 	else console.log("NO");
+					});
+				});
+			
+				featurelayer.on('mouseover', function(e) {
+					e.layer.setStyle({"fillOpacity":.3});
+				
+				});
+				featurelayer.on('mouseout', function(e) {
+					e.layer.setStyle({"fillOpacity":0});
+				});*/
+
+
+				
+			});
+			
+  	</script>
+  </body>
+</html>

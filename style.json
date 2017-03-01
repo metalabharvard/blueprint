@@ -1,0 +1,378 @@
+{
+    "version": 8,
+    "name": "fullcharts",
+    "center": [
+        0,
+        -1.4210854715202004e-13
+    ],
+    "zoom": 0.519636139476027,
+    "bearing": 0,
+    "pitch": 0,
+		"sprite": "mapbox://sprites/metalabatharvard/cil2myt3l00139ckodvns3vry",
+		"glyphs": "mapbox://fontstack/{fontstack}/{range}.pbf",  
+    "sources": {
+        "mapbox://metalabatharvard.1skvkqck": {
+            "url": "mapbox://metalabatharvard.1skvkqck",
+            "type": "raster"
+        },
+        "mapbox://metalabatharvard.4lcpuo7m": {
+            "url": "mapbox://metalabatharvard.4lcpuo7m",
+            "type": "raster"
+        },
+ 
+         "mapbox://metalabath.9yfj798f": {
+            "url": "mapbox://metalabath.9yfj798f",
+            "type": "raster"
+        },
+        
+        
+        "blocks": {
+        	"type": "geojson",
+        	"data": {
+        		"type":"FeatureCollection","features":[
+							{"type":"Feature",
+							"properties":{
+							"title":"top"
+							},
+        			"geometry":{"coordinates":[[
+        			[-180,90],
+        			[-180,41],
+        			[296.015625,41],
+        			[294.609375,90],
+        			[-180,90]
+        			]],"type":"Polygon"},"id":"97ee7ded13b1d4e1ec8a227b8dc879e6"},
+        			
+							{"type":"Feature",
+							"properties":{
+							"title":"bottom"
+							},
+        			"geometry":{"coordinates":[[
+        			[-180,-90],
+        			[-180,-41],
+        			[296.015625,-41],
+        			[294.609375,-90],
+        			[-180,-90]
+        			]],"type":"Polygon"},"id":"97ee7ded13b1d4e1ec8a227b8dc879e6"}      			
+        			
+        			]     		
+        		}
+        },
+        
+         "markers": {
+        	 "type": "geojson",
+						"data": {
+								"type": "FeatureCollection",
+								"features": [
+								{
+										"type": "Feature",
+										"id": "marker_one",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-167.51953100000003, 2.635788]
+										},
+										"properties": {
+												"title": "one",
+												"id": "one",
+												"icon": {
+												"iconUrl": "/mapbox.js/assets/images/astronaut1.png",
+												"iconSize": [50, 50]
+											}
+										}
+								}, {
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-119.00390599999997, 21.289374]
+										},
+										"properties": {
+												"title": "two",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-123.92578099999997, -17.644022]
+										},
+										"properties": {
+												"title": "three",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-73.828125, 1.933226]
+										},
+										"properties": {
+												"title": "four",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-31.640624000000003, 10.833305]
+										},
+										"properties": {
+												"title": "five",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [0, 23.241346]
+										},
+										"properties": {
+												"title": "six",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [2.8125, -24.846565]
+										},
+										"properties": {
+												"title": "seven",
+												"marker-symbol": "harbor"
+										}
+								}, {
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [37.265625, 6.315298]
+										},
+										"properties": {
+												"title": "eight",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [90.351563, 1.757536]
+										},
+										"properties": {
+												"title": "nine",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [119.53125, 4.214943]
+										},
+										"properties": {
+												"title": "ten",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [150.46875, 2.108898]
+										},
+										"properties": {
+												"title": "eleven",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-170.859375, -35.173808]
+										},
+										"properties": {
+												"title": "twelve-a",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [-52.734375, -35.173808]
+										},
+										"properties": {
+												"title": "twelve-b",
+												"marker-symbol": "harbor"
+										}
+								},
+								{
+										"type": "Feature",
+										"geometry": {
+												"type": "Point",
+												"coordinates": [70.3125, -35.173808]
+										},
+										"properties": {
+												"title": "twelve-c",
+												"marker-symbol": "harbor"
+										}
+								}
+							]
+						}
+        },
+        
+            
+        "areas": {
+        	"type": "geojson",
+        	"data": { "type":"FeatureCollection","features":[{"type":"Feature","properties":{"title":"area_three","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-75.9375,35.746512],[-89.296875,22.268764],[-93.867187,1.406108],[-88.945312,-16.972741],[-76.992187,-36.031331],[-63.984375,-37.996162],[-61.874999,-26.74561],[-63.984375,15.961329],[-66.09375,36.597889],[-75.9375,35.746512]]],"type":"Polygon"},"id":"0dc6fe09cd5c6c7400acfa68d2895bb1"},{"type":"Feature","properties":{"title":"area_twelve_c","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[63.105468,-34.234512],[62.929687,-39.774769],[75.9375,-39.774769],[76.464843,-33.797408],[63.105468,-34.234512]]],"type":"Polygon"},"id":"38a6b47913d874fe0ef0d395473f6e51"},{"type":"Feature","properties":{"title":"area_eight","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-56.601562,38.272688],[-57.304687,-6.664607],[-55.195312,-30.145127],[-45.351562,-35.173808],[-30.937499,-30.448673],[-17.578125,-9.102096],[-15.117187,29.840643],[-37.265625,37.71859],[-48.867187,39.639537],[-56.601562,38.272688]]],"type":"Polygon"},"id":"3d423b8220418a8f65d3fa21bd307fa9"},{"type":"Feature","properties":{"title":"area_twelve_b","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-57.656249,-34.597041],[-58.007812,-40.580584],[-44.296874,-40.178873],[-41.660156,-36.173356],[-50.097656,-34.161818],[-56.953125,-34.452218],[-57.656249,-34.597041]]],"type":"Polygon"},"id":"4e259d82b1cc4582b6e2ac803c361a53"},{"type":"Feature","properties":{"title":"area_eleve","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-176.132812,34.88593],[-175.78125,-31.353636],[-148.710937,-30.751277],[-155.039062,-5.266007],[-163.476562,3.864254],[-163.828125,11.86735],[-162.421875,22.917922],[-168.046875,33.137551],[-176.132812,34.88593]]],"type":"Polygon"},"id":"6c36089e3633618a901f9bb6cc37dafb"},{"type":"Feature","properties":{"title":"area_five","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-8.789062,-20.797201],[-10.898437,-32.249974],[-6.503906,-40.313043],[11.777343,-40.313043],[17.226562,-34.741612],[16.347656,-26.115985],[14.765625,-19.145168],[9.140625,-14.093957],[5.625,-13.239945],[-1.230468,-11.86735],[-5.976562,-14.264383],[-8.789062,-20.797201]]],"type":"Polygon"},"id":"764d5ea4d96d7c0f48c11cb62405f6f3"},{"type":"Feature","properties":{"title":"area_seven","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-10.195312,39.095962],[-12.304687,30.145127],[-9.492187,13.239945],[-11.953125,4.565473],[-2.988281,-10.141931],[11.25,-13.239945],[12.65625,1.406108],[9.84375,10.141931],[15.117187,30.448673],[13.359375,39.639537],[-10.195312,39.095962]]],"type":"Polygon"},"id":"80b6d504847eb081aa5dbaff4497d266"},{"type":"Feature","properties":{"title":"area_ten","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[179.296875,39.909736],[176.484374,-34.88593],[132.1875,-35.460669],[132.890625,-25.799891],[137.109375,-8.407168],[137.109375,15.284185],[132.1875,40.446947],[179.296875,39.909736]]],"type":"Polygon"},"id":"8c47d5b3b2f18a3fd72d6564be3aecd6"},{"type":"Feature","properties":{"title":"area_two","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[103.798828,11.264612],[110.566406,16.720385],[118.740234,22.187404],[136.230468,11.695272],[135.703125,-11.523087],[104.238281,-11.609193],[102.392578,-3.074695],[103.798828,11.264612]]],"type":"Polygon"},"id":"a74cc3f21deebb099c5c1a219c9cff64"},{"type":"Feature","properties":{"title":"area_six","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-155.390625,19.311143],[-152.578125,2.460181],[-141.328125,0.35156],[-109.6875,0.703107],[-97.734375,4.565473],[-89.648437,33.431441],[-117.421875,35.746512],[-151.875,33.724339],[-155.390625,19.311143]]],"type":"Polygon"},"id":"b98c678709467a7e903a17b5342f6cd6"},{"type":"Feature","properties":{"title":"area_one","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-139.746093,-13.239945],[-137.8125,-9.882275],[-130.341796,-6.751896],[-120.410156,-5.965753],[-113.90625,-7.1881],[-108.017578,-14.774882],[-108.544921,-20.303417],[-114.960937,-25.482951],[-123.398437,-26.273714],[-129.990234,-25.165173],[-134.296875,-24.527134],[-138.251953,-21.616579],[-140.888671,-18.646245],[-139.746093,-13.239945]]],"type":"Polygon"},"id":"e3e30461939800d4a7885994f17271fb"},{"type":"Feature","properties":{"title":"area_four","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[17.929687,38.82259],[16.523437,26.74561],[14.0625,12.554563],[12.480468,6.315298],[13.183593,-6.315298],[13.007812,-14.774882],[17.578125,-25.165173],[21.09375,-36.597889],[58.710937,-38.82259],[56.953125,39.909736],[17.929687,38.82259]]],"type":"Polygon"},"id":"f0378ed8ab064864a086be3f0406fe82"},{"type":"Feature","properties":{"title":"area_nine","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[63.28125,38.82259],[62.578125,-33.724339],[97.03125,-32.546813],[104.0625,-16.636191],[99.843749,4.214943],[103.359374,17.978733],[96.328125,39.368279],[66.09375,38.82259],[63.28125,38.82259]]],"type":"Polygon"},"id":"f620af0411446b7895c471713c3bfce9"},{"type":"Feature","properties":{"title":"area_twelve_a","description":"","stroke":"#1087bf","stroke-width":0,"stroke-opacity":1,"fill":"#1087bf","fill-opacity":0},"geometry":{"coordinates":[[[-176.132812,-34.234512],[-176.308593,-39.164141],[-166.728515,-39.095962],[-163.740234,-37.090239],[-163.828125,-34.234512],[-176.132812,-34.234512]]],"type":"Polygon"},"id":"fbce644bc2a72e44c33402ebf4304c19"}],"id":"metalabatharvard.o6h804fn"		
+        	}
+        }
+    },
+    "sprite": "mapbox://sprites/metalabatharvard/cijejqiwf00ef0altd6xuqe5k",
+    "glyphs": "mapbox://fonts/metalabatharvard/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "hsl(0, 0%, 100%)"
+            },
+            "interactive": true
+        },
+
+        {
+            "type": "raster",
+            "paint": {
+            	"raster-opacity": 1
+            },
+            "layout": {
+                "visibility": "visible"
+            },
+            "id": "charts",
+            "source": "mapbox://metalabath.9yfj798f",
+            "interactive": true
+        },
+                
+        {
+            "type": "raster",
+            "paint": {
+            	"raster-opacity": 1
+            },            
+            "layout": {
+                "visibility": "visible"
+            },
+            "id": "mylars",
+            "source": "mapbox://metalabatharvard.1skvkqck",
+            "interactive": true
+
+        },
+        
+        {
+            "type": "raster",
+            "paint": {
+            	"raster-opacity": 0.5
+            },            
+            "layout": {
+                "visibility": "visible"
+            },
+            "id": "posters",
+            "source": "mapbox://metalabatharvard.4lcpuo7m",
+            "interactive": true
+
+        },
+        
+        {
+        	"type": "fill",
+        	"id": "areas_features",
+        	"layout": {
+            "visibility": "visible"
+          },
+          "source": "areas",
+          "interactive": true,
+          "paint": {
+          	"fill-opacity": 0.001
+          }
+         
+        },
+
+ 			{
+        	"type": "fill",
+        	"id": "blocks",
+        	"layout": {
+            "visibility": "visible"
+          },
+          "source": "blocks",
+          "interactive": true,
+          "paint": {
+          	"fill-opacity": 0.001,
+          	"fill-color": "white"
+          }
+         
+      },
+		{
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "interactivity": "true",
+        "layout": {
+            "icon-image": "imgs/favicon1.png",
+            "text-field": "{title}",
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
+            "text-anchor": "top",
+            "icon-ignore-placement": true
+        },
+        "paint": {
+        	"icon-color": "red"
+        }
+
+          
+         
+      },
+        {
+            "interactive": true,
+            "layout": {
+                "visibility": "visible",
+                "icon-image": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            0,
+                            "art-gallery-15"
+                        ],
+                        [
+                            22,
+                            "art-gallery-15"
+                        ]
+                    ]
+                },
+                "icon-allow-overlap": true
+            },
+            "filter": [
+                "in",
+                "$type",
+                "Point",
+                "LineString",
+                "Polygon"
+            ],
+            "type": "symbol",
+            "source": "markers",
+            "id": "markers",
+            "paint": {
+                "text-color": "hsl(0, 100%, 50%)"
+            },
+            "source-layer": "markers"
+        }
+        
+        
+    ],
+    "created": "2016-01-14T17:44:54.917Z",
+    "id": "cijejqiwf00ef0altd6xuqe5k",
+    "modified": "2016-01-14T17:53:48.266Z",
+    "owner": "metalabatharvard",
+    "draft": false,
+    "sprite": "style/sprite"
+}

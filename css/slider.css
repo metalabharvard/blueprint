@@ -1,0 +1,55 @@
+.sliderLabel {
+		left: 146px;
+		position: absolute;
+		top: -8px;
+		width: 100px;
+}
+
+.sliderPerc {
+		position: absolute;
+		top: -8px;
+}
+
+.slider-container {
+    width: 200px;
+    height: 15px;    
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.slider-background {
+    position: absolute;
+    left: 35px;
+    margin: 0 auto;
+    height: 1px;
+    width: 100px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.ui-slider-range.ui-widget-header.ui-corner-all.ui-slider-range-min {
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    top: -1px;
+    cursor: pointer;
+}
+.ui-slider-range.ui-widget-header.ui-corner-all.ui-slider-range-min:hover,
+.slider-container:hover > .ui-slider-range-min, 
+.slider-container:hover  > .slider-background{
+    background-color: #dd291c;
+}
+
+.slider-background .ui-slider-handle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    margin-left: -4px;
+    margin-top: -2px;
+    cursor: pointer;
+    outline: none;
+}
