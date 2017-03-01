@@ -81,7 +81,7 @@
   		var videolist;
   		$.get("js/counterviews.json",function(videos) {
   			
-  			addVideos(shuffle(JSON.parse(videos).body.data));		 
+  			addVideos(shuffle(videos.body.data));		 
   				
   		});
   		
